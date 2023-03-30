@@ -24,7 +24,7 @@ export const objectArrayAtom = atom<TPerson[]>([
   },
 ]);
 
-export const familyAtom = atom((get) => {
+export const progressAtom = atom((get) => {
   const people = get(objectArrayAtom);
   return people.filter((person) => person.age < 999);
 });
