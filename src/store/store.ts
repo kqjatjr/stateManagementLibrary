@@ -10,7 +10,7 @@ type Store = {
 
 const getSessionStorage = () => {
   if (typeof window !== "undefined") {
-    return window.localStorage;
+    return window.sessionStorage;
   }
   return {
     getItem: () => null,
