@@ -8,6 +8,20 @@ type Store = {
   initCount: () => void;
 };
 
+const getSessionStorage = () => {
+  if (typeof window !== "undefined") {
+    return window.localStorage;
+  }
+  return {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {},
+    clear: () => {},
+    key: () => null,
+    length: 0,
+  };
+};
+
 const useStore = create<Store>()(
   devtools(
     persist(
@@ -25,6 +39,7 @@ const useStore = create<Store>()(
       }),
       {
         name: "storeTest",
+        getStorage: getSessionStorage,
       },
     ),
   ),
