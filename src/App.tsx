@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import useStore from "./store/store";
+import useStore from "./zustandStore/store";
 
 function App() {
   const [targetNumber, setTargetNumber] = useState(0);
